@@ -1,10 +1,12 @@
 import './App.css';
-import Navigation from './Navigation';
+import Main from './Main'
+import { useState } from 'react';
+import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App">
-      <Navigation/>
+      <Main/>
     </div>
   );
 }

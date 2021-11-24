@@ -5,26 +5,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-  height:100vh;
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.col-md-4{
+  margin-top: 150px !important; 
+  background-color: white;
+}
+input{
+  margin-top: 10px !important;
+  inline-size: 300px;
+  border-width: 3px !important;
+  
+}
 button{
-  float:left;
-  margin: 15px;
+  margin-top: 10px!important;
+  margin-bottom: 10px !important;
 }
-li{
-  list-style-type: none;
-  font-size: 40px;
-  color: whitesmoke;
-  padding: 37px;
+h1{
+  color:darkgreen;
+  font-style:oblique;
 }
-.maindiv{
-  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  height:100vh;
-  transition: 0.2s;
+p{
+  color:red;
+  font-weight: bold;
 }
