@@ -1,0 +1,15 @@
+input{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+form{
+    margin-top: 50%;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    padding: 20px;
+    border-radius: 5px;
+}
+p{
+    color: darkslategray;
+    font-weight: bolder;
+    font-size:xx-large;
+}
