@@ -1,9 +1,10 @@
-import Main from './Main'
-import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css';
+import Navigation from './Navigation';
+
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <Navigation/>
     </div>
   );
 }
