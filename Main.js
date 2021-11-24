@@ -1,82 +1,33 @@
-import React, { useState } from 'react'
-
-export default function Main() {
-    const[username, setusername]=useState('') //hooks to take input and set
-    const[email, setemail]=useState('')
-    const[password, setpassword]=useState('')
-    const[cpassword, setcpassword]=useState('')
-
-    const[eusername, seteusername]=useState('') //error hooks to display on error
-    const[eemail, seteemail]=useState('')
-    const[epassword, setepassword]=useState('')
-    const[ecpassword, setecpassword]=useState('')
-
-    const[ucolour, setucolour]=useState('') //border colour hooks
-    const[ecolour, setecolour]=useState('')
-    const[pcolour, setpcolour]=useState('')
-    const[cpcolour, setcpcolour]=useState('')
-
-    
-
-    function validate (){
-        console.log(username + email + password + cpassword) //print in console to validate entry 
-        //username validation
-        if(username.length>=8){
-            seteusername('')
-            setucolour('green')
-        }
-        else{
-            seteusername('username must be atleast 8 characters long')
-            setucolour('red')
-        }
-        //email validation
-        if(email.includes('@gmail') || email.includes('@hotmail') || email.includes('@yahoo') || email.includes('@icloud')){
-            seteemail('')
-            setecolour('green')
-        }
-        else{
-            seteemail('please enter a valid email address')
-            setecolour('red')
-        }
-        //password validation
-        if(password.length>=8){
-            setepassword('')
-            setpcolour('green')
-        }
-        else{
-            setepassword('password must be atleast 8 characters long')
-            setpcolour('red')
-        }
-        //confirm password validation
-        if(cpassword===password){
-            setecpassword('')
-            setcpcolour('green')
-        }
-        else{
-            setecpassword('passwords do not match')
-            setcpcolour('red')
-        }
-
+import React, {Component} from 'react'
+//class
+class Main extends Component{
+    constructor(props){
+        super(props);
+        this.state={ 
+            number: 0
+         }
     }
-
-    return (
-        <div className="row justify-content-center">
-            <div className="col-md-4 shadow p-3 mb-5 bg-white rounded">
-                <h1>Form Validation</h1>
-                <input type="text" placeholder='username' className='form-cotrol' style={{borderColor: ucolour}}
-                value={username} onChange={(e)=>{setusername(e.target.value)}} />
-                <p>{eusername}</p>
-                <input type="text" placeholder='email' className='form-cotrol' style={{borderColor: ecolour}}
-                value={email} onChange={(e)=>{setemail(e.target.value)}} />
-                <p>{eemail}</p>
-                <input type="text" placeholder='password' className='form-cotrol' style={{borderColor: pcolour}}
-                value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
-                <p>{epassword}</p>
-                <input type="text" placeholder='confirm password' className='form-cotrol' style={{borderColor: cpcolour}}
-                value={cpassword} onChange={(e)=>{setcpassword(e.target.value)}} />
-                <p>{ecpassword}</p>
-                <button type="button" class="btn btn-success" onClick={validate}>Submit</button>
+    increment= ()=>{
+        this.setState({number: this.state.number +1})
+    }
+    decrement= ()=>{
+        this.setState({number: this.state.number -1})
+    }
+    neutral= ()=>{
+        this.setState({number: 0})
+    }
+    render(){
+        return (
+            <div className='row jutify-content-center'>
+            <div className='col-md-5' style={{marginTop:'200px',marginLeft:'400px', border: '5px solid black'}}>
+                <h1 class="text-center">React counter</h1>
+                <h1 class="text-center">{this.state.number}</h1>
+                <button class="btn btn-light" onClick={this.increment}>increment</button>
+                <button class="btn btn-dark" onClick={this.decrement}>decrement</button>
+                <button class="btn btn-secondary" onClick={this.neutral}>neutral</button>
             </div>
-        </div>
-    )
+            </div>
+          );
+    }
 }
+export default Main;
